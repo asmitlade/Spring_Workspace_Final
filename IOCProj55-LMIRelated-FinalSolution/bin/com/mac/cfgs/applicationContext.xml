@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- dependent bean cfg -->
+<bean id="rh" class="com.mac.beans.RequestHandler" scope="prototype"/>
+
+<!-- target bean cfg -->
+<bean id="msc" class="com.mac.beans.MyServletContainer" scope="singleton">
+	<lookup-method name="getRequestHandler" bean="rh"/>
+</bean>
+</beans>

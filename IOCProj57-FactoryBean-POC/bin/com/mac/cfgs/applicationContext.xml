@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="factory" class="com.mac.beans.DateFactoryBean">
+	<constructor-arg value="1993"/>
+	<constructor-arg value="3"/>
+	<constructor-arg value="30"/>
+</bean>
+
+<bean id="alarm" class="com.mac.beans.Alarm">
+	<constructor-arg ref="factory"/>
+</bean>
+</beans>

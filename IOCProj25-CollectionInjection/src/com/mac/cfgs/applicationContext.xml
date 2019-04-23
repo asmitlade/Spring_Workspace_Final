@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="inst" class="com.mac.beans.Institute">
+	<property name="faculty" >
+		<map>
+			<entry key="HK" value="Core Java"/>
+			<entry key="Nataraz" value="Advance Java"/>
+			<entry key="Murali" value="Oracle"/>
+		</map>
+	</property>
+</bean>
+</beans>

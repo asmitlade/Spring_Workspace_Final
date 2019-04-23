@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+<bean id="dob" class="java.util.Date" p:year="93" p:month="3" p:date="26"/>
+<bean id="doj" class="java.util.Date" p:year="119" p:month="7" p:date="19"/>
+
+<util:list id="list1" list-class="java.util.ArrayList" value-type="java.lang.String">
+	<value>asmit</value>
+	<value>asmit</value>
+	<value>mac</value>
+	<value>jyoti</value>
+</util:list>
+
+<util:list id="list2" list-class="java.util.LinkedList" value-type="java.lang.Date">
+	<ref bean="dob"/>
+	<ref bean="doj"/>
+</util:list>
+
+<util:set id="set1" set-class="java.util.HashSet" value-type="java.lang.Long">
+	<value>9999999999</value>
+	<value>8888888888</value>
+	<value>9082289635</value>
+</util:set>
+
+<util:set id="set2" set-class="java.util.LinkedHashSet" value-type="java.util.Date">
+	<ref bean="dob"/>
+	<ref bean="doj"/>
+</util:set>
+
+<util:map id="map1" map-class="java.util.LinkedHashMap" key-type="java.lang.String" value-type="java.util.Date">
+	<entry key="asmit" value-ref="dob"/>
+	<entry key="mac" value-ref="doj"/>	
+</util:map>
+
+<util:properties id="props1" value-type="java.lang.String">
+	<prop key="name"/>
+	<prop key="age"/>
+	<prop key="country"/>
+</util:properties>
+
+<util:properties id="props2" location="classpath:com/mac/commons/info.properties"/>
+
+<util:constant id="mPI" static-field="java.lang.Math.PI" />
+</beans>

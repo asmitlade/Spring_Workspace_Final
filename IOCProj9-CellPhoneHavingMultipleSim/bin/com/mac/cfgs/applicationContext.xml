@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Dependent Classes configuration -->
+<bean id="air" class="com.mac.beans.Airtel"></bean>
+<bean id="voda" class="com.mac.beans.Vodafone"></bean>
+<bean id="idea" class="com.mac.beans.Idea"></bean>
+<!-- Target Classes configuration -->
+<bean id="cpo" class="com.mac.beans.CellPhoneOperation">
+<constructor-arg ref="air"></constructor-arg>
+</bean>
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Dependent bean class cfg -->
+<!--  <bean id="ila" class="com.mac.beans.IntLoanAmt">
+	<property name="pamt" value="100000"/>
+	<property name="rate" value="2"/>
+	<property name="time" value="12"/>
+</bean> -->
+
+<!-- Target bean class cfg -->
+<bean id="loanDept" class="com.mac.beans.BankLoanDept">
+ 	<!-- <constructor-arg ref="ila"/> -->
+	<constructor-arg value="100000,2,12"/> 
+</bean>
+
+<!-- CustomEditorConfigurer cfgs -->
+<bean id="cec" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	<property name="customEditors">
+		<map>
+			<entry key="com.mac.beans.IntLoanAmt" value="com.mac.editor.IntLoanAmtEditor"/>
+		</map>
+	</property>
+</bean>
+
+</beans>

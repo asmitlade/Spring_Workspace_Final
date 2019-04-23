@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Dependent bean object -->
+<bean id="jm" class="com.nt.bean.JavaMaterial"></bean>
+<bean id="dnm" class="com.nt.bean.DotNetMaterial"></bean>
+<bean id="phpm" class="com.nt.bean.PhpMaterial"></bean>
+
+<!-- Target class object -->
+<bean id="std" class="com.nt.bean.Student">
+<constructor-arg ref="jm"/>
+<property name="sno" value="111"/>
+<property name="sname" value="Asmit"/>
+<property name="course" value="java"/>
+<property name="material" ref="jm"/>
+</bean>
+</beans>

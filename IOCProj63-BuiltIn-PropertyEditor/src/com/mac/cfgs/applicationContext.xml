@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="aadhar" class="com.mac.beans.AadharDetails">
+	<property name="name" value="Asmit Lade"/>
+	<property name="uid" value="9859454857654"/>
+	<property name="dob" value="04/26/1993"/>
+	<property name="age" value="26.4"/>
+	<property name="mobNo" value="9082289635"/>
+	<property name="favoriteLetter" value="j"/>
+	<property name="favoriteLetters" value="jyoti"/>
+	<property name="photoPath" value="c:\\mac.png"/>
+	<property name="moles" value="near forhead, on the hand"/>
+</bean>
+
+</beans>

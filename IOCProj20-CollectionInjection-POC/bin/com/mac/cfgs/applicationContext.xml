@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- ListCollectionInjection -->
+<bean id="sname" class="com.mac.beans.ListCollectionInjection">
+	<property name="sname">
+		<list>
+			<value>asmit</value>
+			<value>asmit</value>
+			<value>jiya</value>
+			<value>raja</value>
+			<value>rani</value>
+		</list>
+	</property>
+</bean>
+
+<!-- SetCollectionInjection -->
+<bean id="mobno" class="com.mac.beans.SetCollectionInjection">
+	<property name="mobNo">
+		<set>
+			<value>9022289635</value>
+			<value>9049166535</value>
+			<value>8698494452</value>
+			<value>9637877352</value>
+			<value>4388473873</value>
+			<value>4388473873</value>
+		</set>
+	</property>
+</bean>
+
+<!-- MapCollectionInjection -->
+<bean id="uid" class="com.mac.beans.MapCollectionInjection">
+	<property name="uid">
+		<map>
+			<entry key="asmit" value="123"></entry>
+			<entry key="raja" value="456"></entry>
+			<entry key="rani" value="456"></entry>
+		</map>
+	</property>
+</bean>
+
+<!-- PropertiesCollectionInjection -->
+<bean id="empDesg" class="com.mac.beans.PropertiesCollectionInjection">
+	<property name="empDesg">
+		<props>
+			<prop key="asmit">Java Developer</prop>
+			<prop key="mac">.net Developer</prop>
+		</props>		
+	</property>
+</bean>
+</beans>

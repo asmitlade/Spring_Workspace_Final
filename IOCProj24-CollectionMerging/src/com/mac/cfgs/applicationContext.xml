@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" default-merge="true"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="enggCourse" class="com.mac.beans.EngineeringCourse">
+	<property name="subject">
+		<set>
+			<value>Basic Math</value>
+			<value>English</value>
+		</set>
+	</property>
+</bean>
+<bean id="base1styear" class="com.mac.beans.EngineeringCourse" parent="enggCourse">
+	<property name="subject">
+		<set merge="default">
+			<value>C</value>
+			<value>C++</value>
+			<value>Java</value>
+		</set>
+	</property>
+</bean>
+
+<bean id="food" class="com.mac.beans.Food">
+	<property name="veg">
+		<set>
+			<value>veg soup</value>
+			<value>dal fry</value>
+		</set>
+	</property>
+	<property name="nonVeg">
+		<list>
+			<value>Chicken Corama</value>
+			<value>Egg Curry</value>
+		</list>
+	</property>
+</bean>
+</beans>

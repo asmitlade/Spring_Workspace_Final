@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="com/nt/commons/DBDetails.properties"></property>
+</bean>
+
+<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="${jdbc.driver}" />
+<property name="url" value="${jdbc.url}" />
+<property name="username" value="${db.user}" />
+<property name="password" value="${db.pwd}"/>
+</bean>
+
+<bean id="stDao" class="com.nt.dao.StudentDAOImpl">
+<constructor-arg ref="drds"/>
+</bean>
+
+<bean id="stService" class="com.nt.service.StudentServiceImpl">
+<constructor-arg ref="stDao" />
+</bean>
+
+<bean id="stController" class="com.nt.controller.StudentController">
+<constructor-arg ref="stService" />
+</bean>
+
+</beans>

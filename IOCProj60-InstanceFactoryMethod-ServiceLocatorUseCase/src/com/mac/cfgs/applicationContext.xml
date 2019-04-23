@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+<bean id="serviceLocator" class="com.mac.locator.IPLScoreCompServiceLocatorFactoryBean"/>
+
+<bean id="serviceLocator1" factory-bean="serviceLocator" factory-method="getService">
+	<constructor-arg value="ipl"/>
+</bean>
+
+<bean id="localService" class="com.mac.service.CrickbuzzFindScoreServiceImpl">
+	<constructor-arg name="extComp" ref="serviceLocator1"/>
+</bean>
+
+</beans>

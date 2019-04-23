@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Target Bean -->
+<bean id="emp1" class="com.nt.beans.EmployeeDetails">
+<property name="empno" value="101"/>
+<property name="ename" value="Asmit"/>
+<property name="address" value="Ghanod"/>
+<property name="designation" value="Java Developer"/>
+<property name="sal" value="550000"/>
+</bean>
+<bean id="emp2" class="com.nt.beans.EmployeeDetails">
+<property name="empno" value="110"/>
+<property name="ename" value="Michael"/>
+<property name="address" value="Sakoli"/>
+<property name="designation" value="Full Stack Developer"/>
+<property name="sal" value="1550000"/>
+</bean>
+
+</beans>

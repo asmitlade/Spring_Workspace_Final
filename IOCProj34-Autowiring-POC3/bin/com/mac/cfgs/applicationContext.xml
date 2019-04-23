@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- dependent class beans -->
+					<!-- primary attribute getting high priority -->
+<bean id="plan1" class="com.mac.beans.TourPlan" primary="true">
+	<property name="places">
+		<list>
+			<value>Mumbai</value>
+			<value>Hyderabad</value>
+			<value>Banglore</value>
+			<value>Chennai</value>
+		</list>
+	</property>
+</bean>
+
+<bean id="plan" class="com.mac.beans.TourPlan">
+	<property name="places">
+		<list>
+			<value>NewYork</value>
+			<value>Rio</value>
+			<value>Canada</value>
+			<value>Mexico</value>
+		</list>
+	</property>
+</bean>
+
+<!-- Target class bean -->
+<bean id="tagent" class="com.mac.beans.TravelAgent" autowire="constructor">
+</bean>
+
+</beans>

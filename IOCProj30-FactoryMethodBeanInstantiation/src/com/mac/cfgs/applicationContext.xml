@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- static factory method returning its own class object -->
+<bean id="c1" class="java.lang.Class" factory-method="forName">
+	<constructor-arg value="java.util.Date"/>
+</bean>
+
+<!-- static factory method returning some other class object -->
+<bean id="c2" class="java.util.Calendar" factory-method="getInstance"/>
+
+<!-- instance factory method returning its own class object -->
+<bean id="s1" class="java.lang.String">
+	<constructor-arg value="Hello"/>
+</bean>
+
+<!-- instance factory method returning some other class object -->
+<bean id="s2" factory-method="concat" factory-bean="s1">
+	<constructor-arg value="Asmit"/>
+</bean>
+
+<bean id="sb" class="java.lang.StringBuffer">
+	<constructor-arg value="How are you ?"/>
+</bean>
+
+<bean id="s3" factory-bean="sb" factory-method="substring">
+	<constructor-arg value="0"/>
+	<constructor-arg value="5"/>
+</bean>
+
+</beans>

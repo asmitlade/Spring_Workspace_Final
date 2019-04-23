@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Sequentially Pass the values -->
+<bean id="cmp1" class="com.nt.beans.ConstructorMultipleParam">
+	<constructor-arg value="234"/>
+	<constructor-arg value="Asmit"/>
+	<constructor-arg value="5000.0f"/>
+</bean>
+<!-- Values pass to constructor using index -->
+<bean id="cmp2" class="com.nt.beans.ConstructorMultipleParam1">
+	<constructor-arg value="45" index="2"/>
+	<constructor-arg value="67" index="0"/>
+	<constructor-arg value="88" index="1"/>
+</bean>
+
+<!-- Values pass to constructor using type -->
+<bean id="cmp3" class="com.nt.beans.ConstructorMultipleParam2">
+	<constructor-arg value="45132.4f" type="float"/>
+	<constructor-arg value="Asmit" type="java.lang.String"/>
+	<constructor-arg value="22" type="int"/>
+</bean>
+
+<!-- Value pass to constructor using name -->
+<bean id="cmp4" class="com.nt.beans.ConstructorMultipleParam3">
+	<constructor-arg value="Asmit" name="ename"/>
+	<constructor-arg value="4554" name="empNo"/>
+	<constructor-arg value="5437875.34f" name="sal"/>
+</bean>
+</beans>

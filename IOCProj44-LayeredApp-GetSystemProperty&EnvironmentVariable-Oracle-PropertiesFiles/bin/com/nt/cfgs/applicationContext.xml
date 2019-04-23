@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- <bean id="ppc" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<list>
+			<value>com/nt/commons/jdbc1.properties</value>
+			<value>com/nt/commons/jdbc2.properties</value>
+		</list>
+	</property>
+</bean>
+ -->
+ <!-- context:property-placeholder is alternate from 3.x onwords -->
+<context:property-placeholder location="classpath:com/nt/commons/jdbc1.properties, classpath:com/nt/commons/jdbc2.properties"/>
+
+<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="${jdbc.driver}" />
+<property name="url" value="${jdbc.url}" />
+<property name="username" value="${db.user}"/>
+<property name="password" value="${db.pwd}"/>
+</bean>
+
+<bean id="scds" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" parent="drds">
+</bean>
+
+<bean id="stDao" class="com.nt.dao.StudentDAOImpl">
+<constructor-arg ref="scds"/>
+</bean>
+
+<bean id="stService" class="com.nt.service.StudentServiceImpl">
+<constructor-arg ref="stDao" />
+<property name="osname" value="${os.name}"></property>
+<property name="java_home" value="${JAVA_HOME}"></property>
+</bean>
+
+<bean id="stController" class="com.nt.controller.StudentController">
+<constructor-arg ref="stService" />
+</bean>
+
+</beans>
+

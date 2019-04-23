@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="bajajBike1" class="com.mac.beans.Bike">
+	<property name="bikeNo" value="MH36J9835"></property>
+	<property name="enginNo" value="85668568598"></property>
+	<property name="ownerName" value="Asmit Lade"></property>
+	<property name="colour" value="Blue"></property>
+	<property name="tankCapacity" value="20litre"></property>
+	<property name="initialSpeed" value="120Kmph"></property>
+	<property name="brand" value="Pulsar"></property>
+	<property name="vendor" value="Bajaj"></property>
+	<property name="enginCc" value="200cc"></property>
+	<property name="enginType" value="Petrol"></property>
+</bean>
+
+<bean id="bajajBike2" class="com.mac.beans.Bike" parent="bajajBike1">
+	<property name="bikeNo" value="ts21J9835"></property>
+	<property name="enginNo" value="9056532222"></property>
+	<property name="ownerName" value="Riya Lade"></property>
+</bean>
+
+</beans>

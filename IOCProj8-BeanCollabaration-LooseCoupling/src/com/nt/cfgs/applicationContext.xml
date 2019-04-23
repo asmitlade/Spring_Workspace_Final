@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="bluedart" class="com.nt.bean.BlueDart"></bean>
+<bean id="dtdc" class="com.nt.bean.DTDC"></bean>
+<bean id="fflight" class="com.nt.bean.FirstFlight"></bean>
+<bean id="amz" class="com.nt.bean.Amazon">
+<constructor-arg ref="fflight"></constructor-arg>
+</bean>
+</beans>

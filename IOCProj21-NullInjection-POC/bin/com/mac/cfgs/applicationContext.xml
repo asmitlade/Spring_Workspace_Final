@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Dependent Class configuration -->
+<bean id="dob" class="java.util.Date">
+	<property name="year" value="93"/>
+	<property name="month" value="3"/>
+	<property name="date" value="26"/>
+</bean>
+
+<bean id="doj" class="java.util.Date">
+	<property name="year" value="120"/>
+	<property name="month" value="8"/>
+	<property name="date" value="1"/>
+</bean>
+
+<!-- Target class configuration -->
+<bean id="std" class="com.mac.beans.Student">
+	<constructor-arg value="1000"/>
+	<constructor-arg value="Asmit"/>
+	<constructor-arg ref="dob"/>
+	<constructor-arg ref="doj"/>
+	<constructor-arg><null/></constructor-arg>
+</bean>
+
+<bean id="emp" class="com.mac.beans.Employee">
+	<property name="empNo" value="1010"/>
+	<property name="ename" value="Asmit"/>
+	<property name="dob" ref="dob"/>
+	<property name="doj" ref="doj"/>
+	<property name="dom"><null/></property>
+</bean>
+
+</beans>
