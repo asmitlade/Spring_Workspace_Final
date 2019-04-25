@@ -1,0 +1,6 @@
+SQL> create table sp_student(sno number(5)primary key,sname varchar2(10),saddrs
+varchar2(10),total number(2),avg number(7,2), result varchar2(6));
+
+
+
+SQL> create sequence sno_seq start with 1001 increment by 1;
