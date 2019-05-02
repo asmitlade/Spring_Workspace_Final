@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- CourseInfo class cfg -->
+	<bean id="ci" class="com.mac.beans.CourseInfo">
+		<property name="institute" value="Naresh i Technologies"/>
+		<property name="avaliablecourses">
+			<list>
+				<value>CoreJava</value>
+				<value>AdvJava</value>
+				<value>Spring</value>
+				<value>Hibernate</value>
+				<value>Restful Webservice</value>
+				<value>ReaTime Project</value>
+			</list>
+		</property>
+		<property name="availableFaculties">
+			<array>
+				<value>HK</value>
+				<value>Venktesh</value>
+				<value>Nataraj</value>
+				<value>Gupta</value>
+				<value>Ashok</value>
+				<value>RamChandre</value>
+			</array>
+		</property>
+		
+		<property name="courseDurations">
+			<map>
+				<entry key="CoreJava" value="3"/>
+				<entry key="AdvJava" value="4"/>
+				<entry key="Spring" value="4"/>
+				<entry key="Hibernate" value="3"/>
+				<entry key="Restful WebService" value="2"/>
+				<entry key="RealTime Project" value="2"/>
+			</map>
+		</property>
+		
+		<property name="prices">
+			<map>
+				<entry key="CoreJava" value="1000"/>
+				<entry key="AdvJava" value="2000"/>
+				<entry key="Spring" value="1500"/>
+				<entry key="Hibernate" value="1000"/>
+				<entry key="Restful WebService" value="1000"/>
+				<entry key="RealTime Project" value="2500"/>
+			</map>
+		</property>
+		
+		<property name="discount" value="3"/>
+	</bean>
+
+	<!-- Student Class cfgs -->
+
+	<bean id="st" class="com.mac.beans.Student">
+		<property name="regNo" value="#{T(java.lang.Math).random()*100}"/>
+		<property name="name" value="Asmit Lade"/>
+		<property name="domain" value="Java"/>
+		<property name="courses">
+			<array>
+				<value>#{ci.avaliablecourses[0]}</value>
+				<value>#{ci.avaliablecourses[1]}</value>
+				<value>#{ci.avaliablecourses[2]}</value>
+				<value>#{ci.avaliablecourses[3]}</value>
+			</array>
+		</property>
+		<property name="faculties" value="#{ci.availableFaculties}"/>
+		<property name="totalDuration" value="#{ci.courseDurations['CoreJava']+ci.courseDurations['AdvJava']+ci.courseDurations['Spring']+ci.courseDurations['Hibernate']}"></property>
+		<property name="fees" value="#{ci.prices['CoreJava']+ci.prices['AdvJava']+ci.prices['Spring']+ci.prices['Hibernate']}"/>
+		<property name="totalFees" value="#{(ci.prices['CoreJava']+ci.prices['AdvJava']+ci.prices['Spring']+ci.prices['Hibernate'])-(ci.prices['CoreJava']+ci.prices['AdvJava']+ci.prices['Spring']+ci.prices['Hibernate'])*(ci.discount/100.0f)}"/>
+	</bean>
+</beans>
