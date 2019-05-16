@@ -1,13 +1,12 @@
 package com.mac.test;
 
-import junit.framework.Test;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
  */
-public class CallBackInterfacesTest 
+public class Test 
     extends TestCase
 {
     /**
@@ -15,7 +14,7 @@ public class CallBackInterfacesTest
      *
      * @param testName name of the test case
      */
-    public CallBackInterfacesTest( String testName )
+    public Test( String testName )
     {
         super( testName );
     }
@@ -23,10 +22,6 @@ public class CallBackInterfacesTest
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
-    {
-        return new TestSuite( CallBackInterfacesTest.class );
-    }
 
     /**
      * Rigourous Test :-)

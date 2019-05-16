@@ -18,7 +18,7 @@
 		<constructor-arg ref="hikaricp"/>
 	</bean>
 	
-	<bean id="dao" class="com.mac.dao.EmployeeDAOImpl">
+	<bean id="dao" class="com.mac.dao.EmployeeDAOImpl3">
 		<constructor-arg ref="jt"/>
 	</bean>
 	
