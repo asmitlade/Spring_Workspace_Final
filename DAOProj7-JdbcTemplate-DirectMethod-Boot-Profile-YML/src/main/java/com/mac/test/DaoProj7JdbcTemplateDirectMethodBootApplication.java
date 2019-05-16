@@ -12,13 +12,13 @@ import com.mac.service.EmployeeService;
 @SpringBootApplication
 @Import(AppConfig.class)
 
-public class DaoProj6JdbcTemplateDirectMethodBootApplication {
+public class DaoProj7JdbcTemplateDirectMethodBootApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = null;
 		EmployeeService service = null;
 		//Environment env = null;
-		ctx = SpringApplication.run(DaoProj6JdbcTemplateDirectMethodBootApplication.class, args);
+		ctx = SpringApplication.run(DaoProj7JdbcTemplateDirectMethodBootApplication.class, args);
 		ctx.getEnvironment().getActiveProfiles();
 		//ctx.refresh();
 		service = ctx.getBean("empService", EmployeeService.class);
