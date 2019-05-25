@@ -1,0 +1,5 @@
+SQL> create table railway_ticket(ticketId number(10)primary key, name varchar2(10), source varchar2(10), dest varchar2(10), price number(10,2));
+
+SQL> create sequence ticketno_seq start with 101 increment by 1;
+
+
